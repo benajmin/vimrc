@@ -49,6 +49,9 @@ set so=7
 " Configure backspace to work properly
 set backspace=2
 
+" Wrap lines with arrow and h,l keys
+set whichwrap+=<,>,h,l,[,]
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
