@@ -2,10 +2,7 @@
 set nu
 
 " Indentation settings
-set expandtab
 set tabstop=2
-set shiftwidth=2
-set autoindent
 set ruler
 
 " Syntax highlighting
@@ -57,3 +54,19 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+
+" Install vimplug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sleuth'
+call plug#end()
+
+" Run PlugInstall if there are missing plugins
+if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
