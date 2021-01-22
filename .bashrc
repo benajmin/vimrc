@@ -17,3 +17,6 @@ export PS1="\[\033[35m\]\u:\[\033[36m\]$HPWD\033[31m\]\$(parse_git_branch)\[\033
 export CLICOLOR=1
 LSCOLORS=exfxcxdxbxegedabagacad
 alias ccat='pygmentize -g -O style=colorful,linenos=1'
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
